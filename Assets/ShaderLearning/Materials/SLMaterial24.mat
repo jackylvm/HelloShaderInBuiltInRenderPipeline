@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SLMaterial21
-  m_Shader: {fileID: 4800000, guid: f381627df67c27c4ba6bd7f13a6211cf, type: 3}
+  m_Name: SLMaterial24
+  m_Shader: {fileID: 4800000, guid: 7af5b2efe85209e45b29e89e3f111216, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -82,6 +82,7 @@ Material:
     - _HidePos: 0
     - _Metallic: 0
     - _Mode: 0
+    - _NumberOfCircles: 10
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
