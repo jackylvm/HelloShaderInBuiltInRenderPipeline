@@ -1,4 +1,4 @@
-Shader "LearnShader/SLShader24"
+Shader "LearnShader/SLShader25"
 {
     SubShader
     {
@@ -28,7 +28,7 @@ Shader "LearnShader/SLShader24"
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
             };
-            
+
             v2_f vert(a2_v v)
             {
                 v2_f o;
@@ -41,10 +41,21 @@ Shader "LearnShader/SLShader24"
 
             fixed4 frag(v2_f i) : SV_Target
             {
-                float2 normal = normalize(i.uv - float2(0.5, 0.5));
-                float r = normal.x;
-                float t = normal.y;
-                return fixed4(t, t, t, 1.0);
+                float2 p0 = float2(0.5, 0.75);
+                float2 p1 = float2(0.5, 0.0);
+                float2 p2 = i.uv;
+
+                float2 dir2 = p2 - p0;
+                float2 n1 = normalize(p1 - p0);
+                float2 n2 = normalize(dir2);
+
+                float t = dot(n1, n2);
+                float d = dot(n1, dir2);
+
+                float red = step(0.5, t);
+                red *= (1 - step(0.5, d));
+
+                return fixed4(red, 0.0, 0.0, 1.0);
             }
             ENDCG
         }
