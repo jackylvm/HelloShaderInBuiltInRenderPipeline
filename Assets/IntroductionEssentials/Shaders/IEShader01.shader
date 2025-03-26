@@ -15,7 +15,7 @@ Shader "IE/IEShader01"
 
             float4 frag(float4 vertex : SV_POSITION):SV_TARGET
             {
-                return float4(1, 0, 0, 1);
+                return fixed4(1, 0, 0, 1);
             }
             ENDCG
         }
